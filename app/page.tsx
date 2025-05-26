@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import SimliAgent from "@/app/SimliAgent";
-import DottedFace from "./Components/DottedFace";
+import VideoFace from "./Components/VideoFace";
 import SimliHeaderLogo from "./Components/Logo";
 import Navbar from "./Components/Navbar";
 import Image from "next/image";
@@ -37,8 +37,9 @@ const Demo: React.FC = () => {
         </text>
       </div>
       <div className="flex flex-col items-center gap-6 bg-effect15White p-6 pb-[40px] rounded-xl w-full">
-        <div>
-          {showDottedFace && <DottedFace />}
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="text-4xl font-bold mb-4">Dutch van der Linde</h1>
+          {showDottedFace && <VideoFace />}
           <SimliAgent
             onStart={onStart}
             onClose={onClose}
@@ -47,22 +48,26 @@ const Demo: React.FC = () => {
       </div>
 
       <div className="max-w-[350px] font-thin flex flex-col items-center ">
-        <span className="font-bold mb-[8px] leading-5 ">
+        <span className="font-bold mb-[8px] leading-5 text-center">
           {" "}
-          Create Simli Agent is a starter repo for creating visual avatars with
-          Simli{" "}
+          Dutch van der Linde, the charismatic and ambitious leader of the Van der Linde gang. Known for his vision of a better world and his unwavering loyalty to his gang members, Dutch is a complex character who represents both the romantic ideal of the American West and its harsh realities.{" "}
         </span>
-        <ul className="list-decimal list-inside max-w-[350px] ml-[6px] mt-2">
-          <li className="mb-1">
-            Fill in your Simli API keys in .env file.
-          </li>
-          <li className="mb-1">
+        <div className="max-w-[350px] mt-2">
+          <div className="mb-1">
+            <a href="https://x.com/RickyAgent822" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <span>Follow on Twitter</span>
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+          <div className="mb-1">
             Create your Simli avatar at app.simli.com
-          </li>
-          <li className="mb-1">
+          </div>
+          <div className="mb-1">
             Copy code output from app.simli.com and paste in <code>app/SimliAgent.tsx</code>.
-          </li>
-        </ul>
+          </div>
+        </div>
         <span className=" mt-[16px]">
           You can now deploy this app to Vercel, or incorporate it as part of
           your existing project.
